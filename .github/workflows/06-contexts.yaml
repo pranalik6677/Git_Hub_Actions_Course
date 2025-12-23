@@ -19,4 +19,4 @@ jobs:
 
          - name: Retrieve Variable
            run:
-             echo "value of repository variable ${{ vars.REPOSITORY_VAR }}"
+             echo "value of repository variable ${{ vars.MY_VAR}}"
