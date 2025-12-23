@@ -7,12 +7,18 @@ on:
             type: boolean
             default: false
 
+env: 
+   MY_WORKFLOW_VAR: workflow
+   MY_OVERWRITTEN_VAR: workflow
 
 #run-name:Mycustom workflow run name {{$runner.os}}
 run-name: 06 - Contexts | DEBUG - ${{ inputs.debug }}
 jobs:
      echo-data:
        runs-on: ubuntu-latest
+       env:
+        MY_JOB_VAR: job
+        MY_OVERWRITTEN_VAR: job
        steps:
          - name: Display Information
            run: |
@@ -22,8 +28,20 @@ jobs:
                 echo "Actor: ${{github.actor}}"
                 echo "Workflow: ${{github.workflow}}"
                 echo "Run ID: ${{github.run_id}}"
-                echo "Run number: ${{github.run_number}}"
+                echo "Run number: ${{github.run_number}}"   
 
          - name: Retrieve Variable
            run:
              echo "value of repository variable ${{ vars.MY_VAR}}"
+
+         - name: Print Env Variables
+           env:
+                MY_OVERWRITTEN_VAR: step
+           run: |
+            "Workflow env: <retrieve the value of the$MY_WORKFLOW_VAR env variable here>"
+            "Overwritten env: <retrieve the value of the$MY_OVERWRITTEN_VAR env variable here>"
+
+         - name: Print Env Variables1
+           run: |
+            "Workflow env: <retrieve the value of the$MY_WORKFLOW_VAR env variable here>"
+            "Overwritten env: <retrieve the value of the$MY_OVERWRITTEN_VAR env variable here>"
