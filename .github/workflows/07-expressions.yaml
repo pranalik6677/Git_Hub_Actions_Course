@@ -22,7 +22,7 @@ jobs:
 
             - name: Print when triggered from main
               if: inputs.debug.workflow == 'master'
-              run: echo "I was triggered from main"
+              run: echo "I was triggered from master"
 
             - name: Greeting
               run: echo "Hello World"
