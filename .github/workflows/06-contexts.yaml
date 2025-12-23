@@ -3,6 +3,7 @@ on:
  - push
  - workflow_dispatch
 
+run-name: Mycustom workflow run name"${{runner.os}}"
 jobs:
      echo-data:
        runs-on: ubuntu-latest
