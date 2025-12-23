@@ -38,12 +38,12 @@ jobs:
            env:
                 MY_OVERWRITTEN_VAR: step
            run: |
-            echo "Workflow env: <retrieve the value of :$MY_WORKFLOW_VAR env variable here>"
-            echo "Overwritten env: <retrieve the value of :$MY_OVERWRITTEN_VAR env variable here>"
+            echo "Workflow env: <retrieve the value of MY_WORKFLOW_VAR:$MY_WORKFLOW_VAR env variable here>"
+            echo "Overwritten env: <retrieve the value of MY_OVERWRITTEN_VAR:$MY_OVERWRITTEN_VAR env variable here>"
 
          - name: Print Env Variables1
            run: |
-             echo "Workflow env: <retrieve the value of :$MY_WORKFLOW_VAR env variable here>"
-             echo "Overwritten env: <retrieve the value of :$MY_OVERWRITTEN_VAR env variable here>"
+             echo "Workflow env: <retrieve the value of MY_WORKFLOW_VAR:$MY_WORKFLOW_VAR env variable here>"
+             echo "Overwritten env: <retrieve the value of MY_OVERWRITTEN_VAR:$MY_OVERWRITTEN_VAR env variable here>"
 
 
