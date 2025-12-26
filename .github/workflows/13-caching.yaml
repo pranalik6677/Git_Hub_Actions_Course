@@ -32,8 +32,8 @@ jobs:
 
             - name: Download cached dependencies
               uses: actions/cache@v3
-              id: cache
-              if: ${{ inputs.use-cache == 'true' }}
+              if: ${{ inputs.use-cache }}
+              id: cache            
               with:
                 path: 13-caching/react-app/node-modules
                 key: deps-node-modules-${{ hashFiles('13-caching/react-app/package.json') }}
