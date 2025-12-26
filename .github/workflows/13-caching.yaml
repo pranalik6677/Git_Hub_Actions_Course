@@ -23,7 +23,7 @@ jobs:
                 working-directory : 13-caching/react-app
         steps:
             - name: Checkout code
-              uses: Actions/checkout@4
+              uses: Actions/Checkout@4
 
             - name: Setup Node
               uses: actions/setup-node@v3
